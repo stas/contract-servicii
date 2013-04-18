@@ -1,0 +1,55 @@
+contract:
+  contract_date:
+  their_name:
+  their_city:
+  their_street:
+  their_street_nr: 
+  their_block_nr:
+  their_entrance:
+  their_floor:
+  their_apartment:
+  their_county:
+  their_id_nr:
+  their_id_date:
+  their_city_hall:
+  their_fiscal_code:
+  their_fiscal_code_date:
+  their_iban:
+  their_bank:
+  their_owner:
+  their_owner_title:
+  company_name:
+  id_nr:
+  id_date:
+  city_hall:
+  fiscal_code:
+  fiscal_code_date:
+  iban:
+  bank:
+  owner:
+  owner_title:
+  city:
+  street:
+  street_nr:
+  block_nr:
+  entrance:
+  floor:
+  apartment:
+  county:
+  contract_objectives:
+  duration:
+  start_date:
+  end_date:
+  price:
+  payment_note:
+  your_duties:
+    - '-'
+  their_duties:
+    - '-'
+  on_failure_price: 0
+  on_failure_note: 0
+  invalid_within: 0
+  announcement_within: 0
+  force_majeure_within: 0 zile
+  copies_nr: 0
+  copies_nr_today: 0

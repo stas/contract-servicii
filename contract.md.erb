@@ -1,0 +1,197 @@
+<%#encoding: utf-8 %>
+<% @contract = YAML.load_file(File.expand_path('contract.yml'))['contract'] %>
+# CONTRACT DE PRESTĂRI DE SERVICII
+
+##### Încheiat astăzi <%= @contract['contract_date'] %>
+
+## I. PĂRȚILE CONTRACTANTE
+
+### 1.1.
+
+S.C. <%= @contract['their_name'] %>,
+cu sediul social în (localitatea) <%= @contract['their_city'] %>,
+str. <%= @contract['their_street'] %> nr. <%= @contract['their_street_nr'] %>,
+bloc <%= @contract['their_block'] %>, scara <%= @contract['their_entrance'] %>,
+etaj <%= @contract['their_floor'] %>, apartament <%= @contract['their_apartment'] %>,
+sector/județ <%= @contract['their_county'] %>,
+înregistrată la Oficiul Registrului Comerțului,
+sub nr. <%= @contract['their_id'] %> din <%= @contract['their_id_date'] %>,
+cod fiscal nr. <%= @contract['their_fiscal_code'] %> din <%= @contract['their_fiscal_code_date'] %>,
+având contul nr. <%= @contract['their_iban'] %> deschis la <%= @contract['their_bank'] %>,
+reprezentată de <%= @contract['their_owner'] %>, cu funcția de <%= @contract['their_owner_title'] %>,
+în calitate de prestator, pe de o parte, și
+
+### 1.2.
+
+PF <%= @contract['contract_date'] %>,
+cu sediul în <%= @contract['city'] %>,
+str. <%= @contract['street'] %> nr. <%= @contract['street_nr'] %>,
+bloc <%= @contract['block'] %>, scara <%= @contract['entrance'] %>,
+etaj <%= @contract['floor'] %>, apartament <%= @contract['apartment'] %>,
+sector/județ <%= @contract['county'] %>,
+posesoarea autorizației nr. <%= @contract['id_nr'] %> din <%= @contract['id_date'] %>,
+eliberată de Primăria <%= @contract['city_hall'] %>,
+codul fiscal nr. <%= @contract['fiscal_code'] %> 
+din <%= @contract['fiscal_code_date'] %>, având contul nr. <%= @contract['iban'] %>,
+deschis la <%= @contract['bank'] %>, reprezentată de <%= @contract['owner'] %>,
+cu funcția de <%= @contract['owner_title'] %>, în calitate de prestator, pe de alta parte,
+
+au convenit să încheie prezentul contract de prestări de servicii, cu respectarea următoarelor clauze:
+
+## II. OBIECTUL CONTRACTULUI
+
+### 2.1.
+
+Obiectul contractului îl reprezintă:
+
+<%= @contract['contract_objectives'] %>
+
+## III. DURATA CONTRACTULUI
+
+### 3.1.
+
+Contractul se încheie pe o durată de <%= @contract['duration'] %> începând de la data
+de <%= @contract['start_date'] %> și până la data de <%= @contract['end_date'] %>.
+
+## IV. PREȚUL CONTRACTULUI
+
+### 4.1.
+
+Prețul prestației este de <%= @contract['price'] %>
+
+### 4.2.
+
+Prețul se va plăti în numerar/cu ordin de plată în contul prestatorului,
+la data efectuării prestației/termenul stabilit de prezentul contract/eșalonat, astfel: 
+
+<%= @contract['payment_note'] %>
+
+## V. OBLIGAȚIILE PĂRȚILOR
+
+### 5.1. Prestatorul de servicii se obligă:
+
+<% @contract['your_duties'].each do |duty| %> 
+ * <%= duty %>
+<% end %>
+
+ 
+### 5.2. Beneficiarul serviciilor se obligă:
+
+<% @contract['their_duties'].each do |duty| %> 
+ * <%= duty %>
+<% end %>
+
+## VI. CLAUZA PENALĂ
+
+### 6.1.
+
+În cazul în care una dintre părți nu își îndeplinește obligațiile contractuale
+sau și le îndeplinește în mod necorespunzător,
+se obligă să plătească celeilalte părți penalități daune-interese în valoare de 
+<%= @contract['on_failure_price'] %>, astfel: <%= @contract['on_failure_note'] %>
+
+## VII. ÎNCETAREA CONTRACTULUI
+
+### 7.1.
+
+Prezentul contract încetează de plin drept,
+fără a mai fi necesară intervenția unui/unei tribunal arbitral/instanțe judecătorești,
+în cazul în care una dintre părți:
+
+ * nu își execută una dintre obligațiile contractuale; 
+ * în termen de <%= @contract['invalid_within'] %> zile de la data primirii notificării prin care i s-a adus la cunoștință că nu și-a executat ori își execută în mod necorespunzător oricare dintre obligațiile ce-i revin.
+
+### 7.2.
+
+Partea care invocă o cauză de încetare a prevederilor prezentului contract 
+o va notifica celeilalte părți, cu cel puțin <%= @contract['announcement_within'] %> zile înainte de data
+la care încetarea urmează să-și producă efectele.
+
+## VIII. FORȚA MAJORĂ
+
+### 8.1.
+
+Nici una dintre părțile contractante nu răspunde de neexecutarea la termen
+sau/și de executarea în mod necorespunzător - total sau parțial -
+a oricărei obligații care îi revine în baza prezentului contract,
+dacă neexecutarea sau executarea necorespunzătoare a obligației respective
+a fost cauzată de forța majoră, așa cum este definită de lege.
+
+### 8.2.
+
+Partea care invocă forța majoră este obligată să notifice celeilalte părți,
+în termen de <%= @contract['force_majeure_within'] %>,
+producerea evenimentului și să ia toate
+măsurile posibile în vederea limitării consecințelor lui.
+
+## IX. NOTIFICĂRI
+
+### 9.1.
+
+În accepțiunea părților contractante, orice notificare adresată de una dintre
+acestea celeilalte este valabil îndeplinită dacă va fi transmisă la adresa/sediul
+prevăzut în partea introductivă a prezentului contract.
+
+### 9.2.
+
+În cazul în care notificarea se face pe cale poștală, ea va fi transmisă,
+prin scrisoare recomandată, cu confirmare de primire (A.R.) și se consideră
+primită de destinatar la data menționată de oficiul poștal primitor pe această confirmare.
+
+### 9.3.
+
+Dacă notificarea se trimite prin telex sau telefax, ea se consideră primită
+în prima zi lucrătoare după cea în care a fost expediată.
+
+### 9.4.
+
+Notificările verbale nu se iau în considerare de nici una dintre părți,
+dacă nu sunt confirmate, prin intermediul uneia din modalitățile prevăzute
+la alineatele precedente.
+
+## X. LITIGII
+
+### 10.1.
+
+Părțile au convenit ca toate neînțelegerile privind validitatea prezentului
+contract sau rezultate din interpretarea, executarea ori încetarea acestuia să
+fie rezolvate pe cale amiabilă de reprezentanții lor.
+
+### 10.2.
+
+În cazul în care nu este posibilă rezolvarea litigiilor pe cale amiabilă,
+părțile se vor adresa instanțelor judecătorești competente.
+
+## XI. CLAUZE FINALE
+
+### 11.1.
+
+Modificarea prezentului contract se face numai prin act adițional
+încheiat între părțile contractante.
+
+### 11.2.
+
+Prezentul contract, împreună cu anexele sale care fac parte integrantă din
+cuprinsul său, reprezintă voința părților și înlătură orice altă înțelegere
+verbală dintre acestea, anterioară sau ulterioară încheierii lui.
+
+### 11.3.
+
+În cazul în care părțile își încalcă obligațiile lor, neexercitarea de partea
+care suferă vreun prejudiciu a dreptului de a cere executarea întocmai sau prin
+echivalent bănesc a obligației respective nu înseamnă că ea a renunțat la acest drept al său.
+
+### 11.4
+
+Prezentul contract a fost încheiat într-un număr de <%= @contract['copies_nr'] %> exemplare,
+din care <%= @contract['copies_nr_today'] %> astăzi <%= @contract['contract_date'] %> , data semnării lui.
+
+
+
+#### PRESTATOR
+
+<%= @contract['owner'] %>
+
+#### BENEFICIAR
+
+<%= @contract['their_name'] %>
